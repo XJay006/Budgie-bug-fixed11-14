@@ -1,0 +1,35 @@
+<h1 class="text-center mb-4">Create Account</h1>
+<form id="createaccount-form" class="mb-3 justify-content-center align-items-center">
+  <div class="mb-3">
+    <label for="Enter First Name" class="form-label">First Name</label>
+    <input type="text" class="form-control"name="fname" id="fname"  required >
+    
+  </div>
+  <div class="mb-3">
+    <label for="Enter Last Name" class="form-label">Last Name</label>
+    <input type="text" class="form-control"name="lname" id="lname" required >
+    
+  </div>
+    <div class="mb-3">
+      <label for="Enter Email Address" class="form-label">Email address</label>
+      <input type="text" class="form-control"name="email" id="createAccountEmail" placeholdder="test@example.com" value="test@example.com" required >
+      
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Enter Password</label>
+      <input type="password" pattern="^.*(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[@1\$&!-_])(?=.*.{6,18}).*" name="password" class="form-control" id="createAccountPassword" required >
+      
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Reenter Password</label>
+        <input type="password"  pattern="^.*(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[@1\$&!-_])(?=.*.{6,18}).*" name="passwordConfirm" class="form-control" id="createAccountPasswordVerification" required>
+        
+    </div>
+    <div>
+        <footer class="fs-6 fst-italic fw-lighter">
+            Password should contain at least 6 characters, one uppercase letter, one lowercase letter, and one number.
+        </footer>
+    </div>
+    
+    <button type="submit"  class="btn btn-primary">Create Account</button>
+  </form>

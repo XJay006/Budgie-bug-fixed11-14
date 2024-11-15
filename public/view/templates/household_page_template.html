@@ -1,0 +1,49 @@
+<div class="d-flex  justify-content-center  w-100">
+
+    <div id="noHouseholdDiv">
+        <h3>No Household Set up</h3>
+        <span>Create Household?</span>
+        <button id="goToHouseholCreationForm" class="btn btn-primary">Create</button>
+    </div>
+    <div id="createHouseHoldDiv" class=" d-none">
+        <form class="d-flex flex-column  justify-content-start ">
+            <div class="mb-3">
+                <label for="houseHoldName" class="form-label">Household Name</label>
+                <input type="text" class="form-control" id="houseHoldName" aria-describedby="emailHelp">
+
+            </div>
+
+
+            <button id="submitHouseholdName" type="submit" class="btn btn-primary">Create</button>
+        </form>
+        <div  class="m-3 d-none">
+            <h2 id="ShowHouseHoldName">
+                filler
+            </h2>
+        </div>
+        <div class="container d-flex flex-column">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Added Member</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                </tbody>
+            </table>
+            <div class="d-flex flex-row">
+                <button id="addmemberBtn" class="m-3 justify-content-start btn btn-info">Add</button>
+                <button id="submitHouseholdMembers" class="m-3 justify-content-end btn btn-primary">Submit</button>
+            </div>
+            
+        </div>
+
+    </div>
+    <div id="hasHouseholdDiv" class="d-none">
+        <span>You have a household</span>
+    </div>
+
+</div>

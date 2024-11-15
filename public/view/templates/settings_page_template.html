@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings</title>
+
+  <style>
+    .avatar {
+      vertical-align: middle;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    #formFile {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <form>
+      <div>
+        <h1>Settings</h1>
+        <div class="text-center">
+          <img src="" class="avatar" alt="...">
+        </div>
+        <div class="mb-3">
+          <input class="form-control" type="file" id="formFile" accept=".jpg, .jpeg, .png">
+          <button class="btn btn-primary" id="btn-upload-image" type="button"> Upload </button>
+        </div>
+        <h2>First Name</h2>
+        <input type="text" id="fname" name="fname" class="form-control" autocomplete="given-name">
+        <h2>Last Name</h2>
+        <input type="text" id="lname" name="lname" class="form-control" autocomplete="family-name">
+        <h2>Email</h2>
+        <input type="text" id="email" name="email" class="form-control" readonly autocomplete="email">
+        <h2>Password</h2>
+        <input type="password" id="password" name="password" class="form-control" autocomplete="current-password">
+        <label>
+          <input type="checkbox" id="toggle-password"> Show Password
+        </label>
+      </div>
+      <br>
+      <button type="button" class="btn btn-primary" id="btn-update">Update</button>
+      <button type="button" class="btn btn-danger" id="btn-goback">Go back</button>
+    </form>
+
+    <!-- categories -->
+    <div class="accordion mt-5" id="categoryAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingCategories">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseCategories" aria-expanded="false" aria-controls="collapseCategories">
+            Categories
+          </button>
+        </h2>
+        <div id="collapseCategories" class="accordion-collapse collapse" aria-labelledby="headingCategories"
+          data-bs-parent="#categoryAccordion">
+          <div class="accordion-body">
+            <div id="categoryList"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- category Template -->
+<script type="text/template" id="categoryTemplate">
+  <div class="card mb-3" id="category-card-{{categoryId}}">
+    <div class="card-body">
+      <h5 class="card-title">{{categoryName}}</h5>
+      <p class="card-text">Budget: ${{amountBudgeted}}</p>
+      <div class="mb-3">
+        <label for="thresholds-{{categoryId}}" class="form-label">Notification Thresholds (%)</label>
+        <input type="text" class="form-control thresholds-input" id="thresholds-{{categoryId}}" value="{{thresholds}}"
+          placeholder="e.g., 50,80,100">
+        <small class="form-text text-muted">Enter percentages separated by commas.</small>
+      </div>
+      <div class="d-flex">
+        <button class="btn btn-primary save-thresholds-btn me-2" data-category-id="{{categoryId}}">Save Thresholds</button>
+        <button class="btn btn-danger delete-category-btn" data-category-id="{{categoryId}}">Delete Category</button>
+      </div>
+    </div>
+  </div>
+</script>
+</body>
+
+</html>

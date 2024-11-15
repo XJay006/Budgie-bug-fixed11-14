@@ -1,0 +1,97 @@
+<div id="incomeContainer" class="d-flex flex-column justify-content-center align-items-center h-100 m-2">
+    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center  w-100">
+        <div class="col-10 col-md-4 m-md-4 justify-content-center">
+            <h2 id="monthlyTotal" class="text-center">Total: </h2>
+            <div>
+                <canvas id="incomeChart" class="h-100"></canvas>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 form-container m-md-4">
+            <h2 class="mt-4">All Incomes</h2>
+            <div class="table-responsive">
+                <table class="table table-hover" id="incomeSourceTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Monthly Income</th>
+                            <th>Date Added</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="incomeTableBody">
+                    </tbody>
+                </table>
+            </div>
+            <form id="incomeForm" class="mb-5">
+                <h2>Add Income</h2>
+                <div class="row">
+                    <div class="mb-3 col-md">
+                        <label for="incomeName" class="form-label">Income Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-pencil"></i></span>
+                            <input id="incomeName" name="incomeName" class="form-control" type="text" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md" id="incomeTypeContainer">
+                        <label for="incomeType" class="form-label">Income Type</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-landmark"></i></span>
+                            <select id="incomeType" name="incomeType" class="form-select form-control" required>
+                                <option value="Salary">Salary</option>
+                                <option value="Hourly">Hourly</option>
+                                <option value="One-time">One time income</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="incomeDetailContainer">
+                    <div class="mb-3" id="incomeDetail">
+                        <label for="incomeFrequency" class="form-label">Income Period</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
+                            <select id="incomeFrequency" name="incomeDetail" class="form-select">
+                                <option value="Yearly">Yearly</option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Biweekly">Biweekly</option>
+                                <option value="Weekly">Weekly</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md">
+                        <label for="income" class="form-label">Income Per Period</label>
+                        <div class="input-group">
+                            <span class="input-group-text">&#8239;<i class="fa-solid fa-dollar-sign"></i>&#8239;</span>
+                            <input id="income" name="income" class="form-control" type="number" min="0" step="any"
+                                required>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary float-end mb-2">Add</button>
+            </form>
+            <!-- <h2 class="mt-4">All Incomes</h2>
+            <div class="table-responsive">
+                <table class="table table-hover" id="incomeSourceTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Monthly Income</th>
+                            <th>Date Added</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="incomeTableBody">
+                    </tbody>
+                </table>
+            </div> -->
+        </div>
+    </div>
+    <style>
+        .table-action {
+            width: 2.5rem;
+        }
+    </style>
+</div>
